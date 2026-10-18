@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type Panel = "how" | "faq" | "login" | "calendar" | "demo" | null;
 
@@ -37,7 +38,7 @@ export default function Home() {
       <header className="site-header">
         <a href="/" className="wordmark" aria-label="FairTime home">FairTime</a>
         <nav className="site-nav" aria-label="Main navigation">
-          <button type="button" onClick={() => setPanel("how")}>How it works</button>
+          <Link href="/how-it-works">How it works</Link>
           <button type="button" onClick={() => setPanel("faq")}>FAQ</button>
           <button type="button" onClick={() => setPanel("login")}>Log in</button>
         </nav>
