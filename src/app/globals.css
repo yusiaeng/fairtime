@@ -373,3 +373,37 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--plum); outline-
   .dashboard-card p { font-size: 16px; }
   .dashboard-tagline { margin-top: 25px; }
 }
+
+
+/* Dashboard desktop: fit header, heading, four cards and tagline in one viewport. */
+@media (min-width: 761px) {
+  .dashboard-page { height: 100svh; min-height: 0; overflow: hidden; }
+  .dashboard-page .site-header { min-height: 62px; padding-top: 8px; padding-bottom: 8px; }
+  .dashboard-main {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: clamp(10px, 2vh, 22px);
+    padding-bottom: clamp(8px, 1.5vh, 16px);
+  }
+  .dashboard-main h1 { font-size: clamp(34px, 5.8vh, 58px); margin-bottom: 4px; }
+  .dashboard-subtitle { margin-bottom: clamp(8px, 1.5vh, 16px); font-size: clamp(12px, 1.55vh, 16px); }
+  .dashboard-grid {
+    flex: 1;
+    min-height: 0;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: clamp(10px, 2vh, 22px) clamp(20px, 3vw, 42px);
+  }
+  .dashboard-card {
+    min-height: 0;
+    overflow: hidden;
+    padding: clamp(8px, 1.6vh, 16px) clamp(16px, 2vw, 27px);
+    border-width: 4px;
+    border-radius: clamp(24px, 4vh, 42px);
+  }
+  .dashboard-number { font-size: clamp(20px, 3vh, 28px); line-height: 1.1; }
+  .dashboard-card h2 { margin: clamp(2px, .6vh, 6px) 0 clamp(3px, .7vh, 9px); font-size: clamp(15px, 2.35vh, 22px); line-height: 1.15; }
+  .dashboard-card p { font-size: clamp(13px, 1.95vh, 19px); line-height: 1.4; }
+  .dashboard-card-action { padding-top: 3px; font-size: clamp(12px, 1.7vh, 14px); }
+  .dashboard-tagline { flex: 0 0 auto; margin-top: clamp(6px, 1.5vh, 14px); font-size: clamp(12px, 1.7vh, 16px); }
+}
