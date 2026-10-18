@@ -24,10 +24,11 @@ export default function CalendarPage() {
           <div className="calendar-connect-content">
             <div className="calendar-provider-area">
               <button className="calendar-provider" disabled title="Google Calendar integration is not yet available">Connect with Google Calendar</button>
-              <button className="calendar-provider" disabled title="Microsoft Outlook integration is not yet available">Connect with Microsoft Outlook</button>
-              <p className="calendar-unavailable" role="status">Calendar connections are not available yet. No calendar is connected.</p>
+              <button className="calendar-provider" disabled title="Microsoft Outlook integration is not yet available">Connect with Microsoft Calendar</button>
+              <button className="calendar-provider" disabled title="Outlook Calendar connection is not yet available">Connect with Outlook Calendar</button>
+              <button className="calendar-provider" disabled title="Apple Calendar connection is not yet available">Connect with Apple Calendar</button>
             </div>
-            <div className="calendar-illustration" aria-hidden="true">🗓️</div>
+            <div className="calendar-illustration" aria-hidden="true"><Image src="/calendar-icon.png" alt="" width={616} height={666} unoptimized /></div>
           </div>
         </section>
         <p className="calendar-tagline">Your calendar knows when you&apos;re free. FairTime knows what&apos;s fair.</p>
