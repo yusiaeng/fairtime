@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const characters = [
-  { id: "pink", label: "Pink character", icon: "🌸" },
-  { id: "orange", label: "Orange character", icon: "⭐" },
-  { id: "green", label: "Green character", icon: "🍀" },
+  { id: "pink", label: "Pink character", image: "/pink.girl.png" },
+  { id: "orange", label: "Angry boy character", image: "/angry.boy.png" },
+  { id: "green", label: "Green boy character", image: "/green.boy.png" },
 ] as const;
 
 export default function CharacterPage() {
@@ -33,19 +33,18 @@ export default function CharacterPage() {
         <h1>03 - Personalise your avatar</h1>
         <div className="character-layout">
           <div className="character-preview" aria-label={current.label + " temporary illustration"}>
-            <span role="img" aria-label={current.label}>{current.icon}</span>
-            <small>Character artwork placeholder</small>
+            <Image src={current.image} alt={current.label} width={650} height={650} unoptimized className="character-preview-image" />
           </div>
           <section className="character-picker" aria-label="Character selection">
             <h2>Select your character.</h2>
             <div className="character-options">
               {characters.map((character) => (
                 <button key={character.id} type="button" className={"character-option" + (selected === character.id ? " selected" : "")} onClick={() => choose(character.id)} aria-label={"Select " + character.label} aria-pressed={selected === character.id}>
-                  <span role="img" aria-label={character.label}>{character.icon}</span>
+                  <Image src={character.image} alt={character.label} width={160} height={160} unoptimized className="character-option-image" />
                 </button>
               ))}
               {[1, 2, 3].map((number) => (
-                <div key={number} className="character-option locked" aria-label="Locked character" title="Coming soon"><span aria-hidden="true">🔒</span></div>
+                <div key={number} className="character-option locked" aria-label="Locked character" title="Coming soon"><Image src="/lock.png" alt="" width={160} height={160} unoptimized className="character-option-image" /></div>
               ))}
             </div>
           </section>
