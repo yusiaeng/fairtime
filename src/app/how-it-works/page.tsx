@@ -22,7 +22,7 @@ const steps = [
 ];
 
 export default function HowItWorksPage() {
-  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [panel, setPanel] = useState<"calendar" | "faq" | "login" | null>(null);
 
   return (
     <div className="how-page">
@@ -30,8 +30,8 @@ export default function HowItWorksPage() {
         <Link href="/" className="wordmark" aria-label="FairTime home">FairTime</Link>
         <nav className="site-nav" aria-label="Main navigation">
           <Link href="/how-it-works" aria-current="page">How it works</Link>
-          <Link href="/?panel=faq">FAQ</Link>
-          <Link href="/?panel=login">Log in</Link>
+          <button type="button" onClick={() => setPanel("faq")}>FAQ</button>
+          <button type="button" onClick={() => setPanel("login")}>Log in</button>
         </nav>
       </header>
 
@@ -48,7 +48,7 @@ export default function HowItWorksPage() {
               </article>
             ))}
           </div>
-          <button className="cta cta-primary how-main-cta" type="button" onClick={() => setCalendarOpen(true)}>
+          <button className="cta cta-primary how-main-cta" type="button" onClick={() => setPanel("calendar")}>
             Create your first meeting <span aria-hidden="true">→</span>
           </button>
           <p className="how-small-tagline">Your calendar knows when you&apos;re free. FairTime knows what&apos;s fair.</p>
@@ -74,16 +74,16 @@ export default function HowItWorksPage() {
               <div className="how-example" aria-label="Browser companion status">Coming soon · Chrome extension</div>
             </article>
           </div>
-          <button className="cta cta-primary how-bottom-cta" type="button" onClick={() => setCalendarOpen(true)}>Connect your calendar</button>
+          <button className="cta cta-primary how-bottom-cta" type="button" onClick={() => setPanel("calendar")}>Connect your calendar</button>
         </section>
       </main>
 
       <footer className="how-footer"><Link href="/">FairTime</Link><span>Meeting times that work for everyone.</span></footer>
 
-      {calendarOpen && (
-        <div className="dialog-backdrop" onClick={() => setCalendarOpen(false)}>
+      {panel && (
+        <div className="dialog-backdrop" onClick={() => setPanel(null)}>
           <section className="info-dialog" role="dialog" aria-modal="true" aria-labelledby="how-dialog-title" onClick={(event) => event.stopPropagation()}>
-            <button className="dialog-close" type="button" aria-label="Close dialog" onClick={() => setCalendarOpen(false)}>×</button>
+            <button className="dialog-close" type="button" aria-label="Close dialog" onClick={() => setPanel(null)}>×</button>
             <h2 id="how-dialog-title">Connect your calendar</h2>
             <p>Google and Outlook calendar connection is not implemented yet. This button is ready to link to onboarding once the integration is built.</p>
           </section>
