@@ -34,7 +34,7 @@ const sections: { title: string; items: FAQItem[] }[] = [
 ];
 
 export default function FAQPage() {
-  const [openQuestion, setOpenQuestion] = useState<string | null>("What is FairTime?");
+  const [openQuestion, setOpenQuestion] = useState<string | null>(null);
   const [loginOpen, setLoginOpen] = useState(false);
 
   return (
