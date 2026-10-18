@@ -540,3 +540,35 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--plum); outline-
   .calendar-illustration img { width: min(100%, 190px); }
   .calendar-connect-content { grid-template-columns: minmax(0, 1fr) minmax(200px, .8fr); }
 }
+
+
+/* Calendar card 2: align illustration top/bottom with the four compact buttons. */
+@media (min-width: 761px) {
+  .calendar-connect-content {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, .85fr);
+    align-items: center;
+    gap: 28px;
+  }
+  .calendar-provider-area {
+    width: min(100%, 425px);
+    justify-self: center;
+    gap: clamp(7px, 1vh, 11px);
+  }
+  .calendar-provider {
+    width: 100%;
+    min-height: 0;
+    height: clamp(39px, 5.4vh, 51px);
+    padding: 5px 14px;
+    font-size: clamp(14px, 1.35vw, 19px);
+  }
+  .calendar-illustration {
+    width: 100%;
+    align-self: center;
+  }
+  .calendar-illustration img {
+    width: auto;
+    height: clamp(170px, calc(4 * clamp(39px, 5.4vh, 51px) + 3 * clamp(7px, 1vh, 11px)), 237px);
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
