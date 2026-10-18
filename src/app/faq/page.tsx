@@ -34,7 +34,7 @@ const sections: { title: string; items: FAQItem[] }[] = [
 ];
 
 export default function FAQPage() {
-  const [openQuestion, setOpenQuestion] = useState<string | null>("What is FairTime?");
+  const [openQuestion, setOpenQuestion] = useState<string | null>(null);
   const [loginOpen, setLoginOpen] = useState(false);
 
   return (
@@ -65,15 +65,20 @@ export default function FAQPage() {
             sections[2].items[0],
             sections[2].items[1],
           ].map((item, index) => {
-            const expanded = openQuestion === item.question;
+            const featured = index === 0;
+            const expanded = featured || openQuestion === item.question;
             return (
               <article className={`faq-item ${expanded ? "is-open" : ""} ${index === 0 ? "faq-featured" : ""}`} key={item.question}>
-                <h2>
-                  <button type="button" aria-expanded={expanded} onClick={() => setOpenQuestion(expanded ? null : item.question)}>
-                    <span>{item.question}</span>
-                    <span className="faq-symbol" aria-hidden="true">{expanded ? "−" : "+"}</span>
-                  </button>
-                </h2>
+                {featured ? (
+                  <h2 className="faq-featured-heading">{item.question}</h2>
+                ) : (
+                  <h2>
+                    <button type="button" aria-expanded={expanded} onClick={() => setOpenQuestion(expanded ? null : item.question)}>
+                      <span>{item.question}</span>
+                      <span className="faq-symbol" aria-hidden="true">{expanded ? "−" : "+"}</span>
+                    </button>
+                  </h2>
+                )}
                 {expanded && <p>{item.answer}</p>}
               </article>
             );
