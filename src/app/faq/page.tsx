@@ -50,8 +50,8 @@ export default function FAQPage() {
       </header>
 
       <main className="faq-main">
-        <h1>Questions? Let&apos;s clear things up.</h1>
-        <p className="faq-intro">Everything you need to know about getting started with FairTime.</p>
+        <h1>Got questions?<br />We&apos;ve got answers.</h1>
+        <p className="faq-intro">Here are some of the most commonly asked questions about FairTime. Can&apos;t find what you&apos;re looking for? Contact us at <span className="faq-email">support@fairtime.app</span>.</p>
         <div className="faq-showcase" aria-label="Frequently asked questions">
           {[
             sections[0].items[0],
