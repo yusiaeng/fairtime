@@ -37,9 +37,10 @@ export default function Home() {
     <div className="landing">
       <header className="site-header">
         <a href="/" className="wordmark" aria-label="FairTime home">FairTime</a>
+        <Link href="/" className="header-mark" aria-label="FairTime home"><Image src="/fairtime-logo.png" alt="" width={64} height={38} /></Link>
         <nav className="site-nav" aria-label="Main navigation">
           <Link href="/how-it-works">How it works</Link>
-          <button type="button" onClick={() => setPanel("faq")}>FAQ</button>
+          <Link href="/faq">FAQ</Link>
           <button type="button" onClick={() => setPanel("login")}>Log in</button>
         </nav>
       </header>
