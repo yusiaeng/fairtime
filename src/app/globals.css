@@ -500,3 +500,12 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--plum); outline-
 .character-option { overflow: hidden; padding: 0; }
 .character-option-image { width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
 .character-option.locked { overflow: hidden; }
+
+
+/* Slightly scale down illustrations to match the Figma references. */
+@media (min-width: 761px) {
+  .calendar-illustration img { width: min(100%, 265px); }
+  .character-layout { grid-template-columns: minmax(0, 2.1fr) minmax(250px, .9fr); gap: 26px; }
+  .character-preview-image { width: 82%; height: 82%; object-fit: contain; }
+  .character-option-image { width: 82%; height: 82%; object-fit: contain; }
+}
