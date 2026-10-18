@@ -479,3 +479,16 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--plum); outline-
 .calendar-tagline { margin: auto 0 0; padding-top: 12px; text-align: center; font: 400 17px var(--font-kadwa), Georgia, serif; }
 @media (min-width: 761px) { .calendar-page { height: 100svh; overflow: hidden; } .calendar-page .site-header { min-height: 62px; padding-block: 8px; } .calendar-main h1 { font-size: clamp(36px, 7vh, 69px); margin-bottom: clamp(10px, 2vh, 24px); } .calendar-intro, .calendar-description { font-size: clamp(16px, 2.5vh, 24px); margin-bottom: clamp(8px, 1.7vh, 17px); } .calendar-connect { margin-top: clamp(4px, 1.5vh, 12px); } .calendar-provider { min-height: clamp(48px, 8vh, 68px); } }
 @media (max-width: 760px) { .calendar-page .site-nav a { font-size: 12px; } .calendar-main { padding: 16px 20px 30px; } .calendar-main h1 { margin: 12px 0 24px; font-size: 38px; } .calendar-intro, .calendar-description { margin-left: 0; font-size: 18px; } .calendar-connect { margin-left: 0; } .calendar-connect-content { grid-template-columns: 1fr; height: auto; padding-top: 25px; } .calendar-illustration { font-size: 160px; } .calendar-tagline { margin-top: 24px; } }
+
+
+/* Calendar Figma refinements. */
+.calendar-intro, .calendar-description { font-size: clamp(18px, 1.7vw, 24px); }
+.calendar-connect h2 { font-size: 25px; }
+.calendar-connect > p { font-size: 22px; }
+.calendar-illustration { font-size: initial; }
+.calendar-illustration img { width: min(100%, 310px); height: auto; object-fit: contain; }
+.calendar-provider-area { gap: clamp(8px, 1.4vh, 14px); }
+@media (min-width: 761px) {
+  .calendar-provider { min-height: clamp(43px, 6.8vh, 64px); }
+  .calendar-connect-content { height: calc(100% - 62px); }
+}
