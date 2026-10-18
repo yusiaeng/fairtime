@@ -136,3 +136,29 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--plum); outline-
   .faq-item h3 button { padding: 14px 18px; }
   .faq-item p { padding: 0 18px 20px; }
 }
+
+/* Compact FAQ desktop layout: all ten collapsed questions visible at once. */
+@media (min-width: 1100px) {
+  .faq-main { max-width: 1600px; padding: 22px 36px 18px; }
+  .faq-main h1 { font-size: clamp(34px, 3.5vw, 52px); line-height: 1.1; margin-bottom: 10px; max-width: none; }
+  .faq-intro { font-size: clamp(15px, 1.15vw, 19px); line-height: 1.25; margin-bottom: 20px; max-width: none; }
+  .faq-sections { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 18px; row-gap: 0; }
+  .faq-section h2 { font-size: 16px; margin-bottom: 10px; }
+  .faq-items { gap: 10px; }
+  .faq-item { border-width: 3px; border-radius: 28px; }
+  .faq-item.is-open { border-radius: 28px; }
+  .faq-item h3 button { padding: 9px 16px; font-size: clamp(14px, 1.15vw, 18px); line-height: 1.25; min-height: 49px; }
+  .faq-symbol { font-size: 24px; }
+  .faq-item p { padding: 0 16px 14px; font-size: 14px; line-height: 1.4; }
+  .faq-tagline { margin-top: 22px; font-size: 14px; }
+}
+@media (min-width: 761px) and (max-width: 1099px) {
+  .faq-main { padding-top: 22px; }
+  .faq-main h1 { font-size: 40px; margin-bottom: 12px; }
+  .faq-intro { font-size: 17px; margin-bottom: 16px; }
+  .faq-items { gap: 9px; }
+  .faq-section h2 { font-size: 16px; margin-bottom: 9px; }
+  .faq-item { border-width: 3px; }
+  .faq-item h3 button { padding: 9px 15px; font-size: 15px; }
+  .faq-item p { font-size: 14px; padding: 0 15px 12px; }
+}
