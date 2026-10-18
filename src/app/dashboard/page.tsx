@@ -42,7 +42,7 @@ export default function DashboardPage() {
               <span className="dashboard-number">{item.number}</span>
               <h2>{item.title}</h2>
               <p>{item.description}</p>
-              <button type="button" className="dashboard-card-action" onClick={() => item.panel === "extension" ? window.location.assign("/dashboard/extension") : item.panel === "character" ? window.location.assign("/dashboard/character") : setPanel(item.panel)}>{item.action} <span aria-hidden="true">→</span></button>
+              <button type="button" className="dashboard-card-action" onClick={() => item.panel === "extension" ? window.location.assign("/dashboard/extension") : item.panel === "character" ? window.location.assign("/dashboard/character") : item.panel === "calendar" ? window.location.assign("/dashboard/calendar") : setPanel(item.panel)}>{item.action} <span aria-hidden="true">→</span></button>
             </article>
           ))}
         </div>
