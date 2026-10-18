@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 type Panel = "how" | "faq" | "login" | "calendar" | "demo" | null;
 
@@ -65,9 +66,7 @@ export default function Home() {
         <div className="hero-art" aria-label="FairTime balance scales artwork area">
           <div className="hero-red-circle" aria-hidden="true" />
           <div className="hero-teal-circle" aria-hidden="true" />
-          <div className="logo-placeholder" role="img" aria-label="Temporary FairTime logo placeholder; replace with the supplied balance scales artwork">
-            <span>FairTime<br />logo</span>
-          </div>
+          <Image className="hero-logo" src="/fairtime-logo.png" alt="FairTime balance scales logo" width={951} height={553} priority />
         </div>
       </main>
 
