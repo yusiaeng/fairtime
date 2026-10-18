@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Link from "next/link";\nimport Image from "next/image";
 
 const steps = [
   {
@@ -27,10 +27,10 @@ export default function HowItWorksPage() {
   return (
     <div className="how-page">
       <header className="site-header">
-        <Link href="/" className="wordmark" aria-label="FairTime home">FairTime</Link>
+        <Link href="/" className="wordmark" aria-label="FairTime home">FairTime</Link>\n        <Link href="/" className="header-mark" aria-label="FairTime home"><Image src="/fairtime-logo.png" alt="" width={64} height={38} /></Link>
         <nav className="site-nav" aria-label="Main navigation">
           <Link href="/how-it-works" aria-current="page">How it works</Link>
-          <button type="button" onClick={() => setPanel("faq")}>FAQ</button>
+          <Link href="/faq">FAQ</Link>
           <button type="button" onClick={() => setPanel("login")}>Log in</button>
         </nav>
       </header>
