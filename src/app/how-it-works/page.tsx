@@ -32,7 +32,7 @@ export default function HowItWorksPage() {
         <nav className="site-nav" aria-label="Main navigation">
           <Link href="/how-it-works" aria-current="page">How it works</Link>
           <Link href="/faq">FAQ</Link>
-          <button type="button" onClick={() => setPanel("login")}>Log in</button>
+          <Link href="/login">Log in</Link>
         </nav>
       </header>
 
