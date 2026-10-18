@@ -24,9 +24,9 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--plum); outline-
 .hero { position: relative; min-height: calc(100svh - 62px); display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); align-items: center; }
 .hero-copy { position: relative; z-index: 2; padding: 20px 0 72px clamp(42px, 7.2vw, 120px); max-width: 740px; }
 .hero-copy h1 { max-width: 670px; margin: 0 0 42px; font-family: var(--font-aclonica), Georgia, serif; font-weight: 400; font-size: clamp(34px, 4.6vw, 64px); line-height: 1; letter-spacing: 0; }
-.hero-description, .hero-tagline { max-width: 610px; margin: 0; font-family: Arial, Helvetica, sans-serif; font-weight: 600; font-size: clamp(15px, 1.45vw, 21px); line-height: 1.18; }
+.hero-description, .hero-tagline { max-width: 610px; margin: 0; font-family: var(--font-aclonica), Georgia, serif; font-weight: 400; font-size: clamp(15px, 1.45vw, 21px); line-height: 1.18; }
 .hero-tagline { margin-top: 12px; }
-.hero-tagline strong { font-weight: 800; }
+.hero-tagline strong { font-weight: 400; }
 .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 44px; }
 .cta { min-height: 45px; padding: 10px 24px; border: 2px solid var(--plum); border-radius: 999px; font-family: Georgia, serif; font-size: 15px; }
 .cta-primary { color: #fff2df; background: var(--plum); }
@@ -36,7 +36,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--plum); outline-
 .hero-art { position: relative; height: 100%; min-height: 500px; }
 .hero-red-circle { position: absolute; width: min(53vw, 750px); aspect-ratio: 1; border-radius: 50%; background: var(--red); top: 2%; left: 10%; }
 .hero-teal-circle { position: absolute; width: min(27vw, 380px); aspect-ratio: 1; border-radius: 50%; background: var(--teal); top: 32%; left: -2%; }
-.logo-placeholder { position: absolute; z-index: 1; width: min(33vw, 480px); aspect-ratio: 1.5; top: 42%; left: -10%; display: grid; place-items: center; color: var(--plum); border: 2px dashed var(--plum); border-radius: 20px; text-align: center; font: 700 18px Arial, sans-serif; }
+.hero-logo { position: absolute; z-index: 1; width: min(33vw, 480px); height: auto; top: 42%; left: -10%; object-fit: contain; }
 
 .dialog-backdrop { position: fixed; z-index: 10; inset: 0; background: #30152299; display: grid; place-items: center; padding: 20px; }
 .info-dialog { position: relative; width: min(100%, 470px); padding: 35px; background: var(--orange); color: var(--plum); border: 2px solid var(--plum); border-radius: 18px; }
@@ -55,7 +55,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--plum); outline-
   .hero-art { min-height: 330px; }
   .hero-red-circle { width: 370px; left: 48%; top: 15%; }
   .hero-teal-circle { width: 210px; left: 37%; top: 28%; }
-  .logo-placeholder { width: 230px; left: 34%; top: 40%; }
+  .hero-logo { width: 230px; left: 34%; top: 40%; }
 }
 @media (max-width: 390px) {
   .site-nav { width: 100%; justify-content: space-between; }
