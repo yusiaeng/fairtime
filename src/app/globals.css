@@ -572,3 +572,22 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--plum); outline-
     object-fit: contain;
   }
 }
+
+
+/* Calendar: enlarge the illustration and all four provider cards vertically together. */
+@media (min-width: 761px) {
+  .calendar-provider-area {
+    gap: clamp(8px, 1.25vh, 13px);
+  }
+  .calendar-provider {
+    height: clamp(48px, 6.7vh, 64px);
+    font-size: clamp(15px, 1.45vw, 20px);
+  }
+  .calendar-illustration img {
+    height: calc(4 * clamp(48px, 6.7vh, 64px) + 3 * clamp(8px, 1.25vh, 13px));
+    width: auto;
+    max-width: 100%;
+    max-height: 31vh;
+    object-fit: contain;
+  }
+}
