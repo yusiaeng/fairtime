@@ -41,7 +41,7 @@ export default function Home() {
         <nav className="site-nav" aria-label="Main navigation">
           <Link href="/how-it-works">How it works</Link>
           <Link href="/faq">FAQ</Link>
-          <button type="button" onClick={() => setPanel("login")}>Log in</button>
+          <Link href="/login">Log in</Link>
         </nav>
       </header>
 
