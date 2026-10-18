@@ -18,7 +18,7 @@ export default function ExtensionPage() {
         <h1>01 - Download the FairTime extension</h1>
         <p className="extension-lead">Bring FairTime into your browser and find meeting times that work better for everyone, without constantly switching between tabs or calendars.</p>
         <div className="extension-centre">
-          <button type="button" className="extension-download" disabled title="Extension not released yet">Download the FairTime extension</button>
+          <a href="/fairtime-extension.zip" download="fairtime-extension.zip" className="extension-download">Download the FairTime extension</a>
           <div className="extension-video">Demo Video</div>
           <div className="extension-update-row">
             <strong>Already installed?</strong>
