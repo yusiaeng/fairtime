@@ -329,3 +329,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--plum); outline-
     padding: 0 16px;
   }
 }
+
+/* Raise the login tagline to match the visual placement on the other public pages. */
+@media (min-width: 761px) {
+  .login-tagline { position: relative; top: -32px; }
+}
