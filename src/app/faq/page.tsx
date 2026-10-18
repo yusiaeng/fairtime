@@ -45,7 +45,7 @@ export default function FAQPage() {
         <nav className="site-nav" aria-label="Main navigation">
           <Link href="/how-it-works">How it works</Link>
           <Link href="/faq" aria-current="page">FAQ</Link>
-          <button type="button" onClick={() => setLoginOpen(true)}>Log in</button>
+          <Link href="/login">Log in</Link>
         </nav>
       </header>
 
