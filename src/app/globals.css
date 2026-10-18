@@ -334,3 +334,42 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--plum); outline-
 @media (min-width: 761px) {
   .login-tagline { position: relative; top: -32px; }
 }
+
+
+/* Dashboard: screenshot-matched hub; scoped so existing pages remain unchanged. */
+.dashboard-page { min-height: 100svh; background: #e8ad71; color: var(--plum); display: flex; flex-direction: column; }
+.dashboard-page .site-header { flex: 0 0 auto; }
+.dashboard-page .wordmark { font: 700 24px/1.3 var(--font-kadwa), Georgia, serif; text-decoration: none; }
+.dashboard-page .site-nav { gap: clamp(35px, 6vw, 95px); }
+.dashboard-page .site-nav a { color: var(--teal); font: 400 clamp(14px, 1.25vw, 19px)/1.4 var(--font-kadwa), Georgia, serif; }
+.dashboard-main { width: min(100%, 1330px); margin: 0 auto; padding: clamp(22px, 3.5vh, 42px) clamp(26px, 4vw, 55px) 24px; flex: 1; }
+.dashboard-main h1 { margin: 0 0 8px; font: 400 clamp(37px, 4.4vw, 64px)/1.12 var(--font-aclonica), Georgia, serif; }
+.dashboard-subtitle { margin: 0 0 22px; font: 400 clamp(13px, 1.2vw, 16px)/1.4 var(--font-kadwa), Georgia, serif; }
+.dashboard-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 38px) clamp(24px, 3.5vw, 52px); }
+.dashboard-card { min-height: clamp(210px, 27vh, 265px); padding: 20px 28px 18px; border: 5px solid #6b9e9d; border-radius: 49px; display: flex; flex-direction: column; align-items: flex-start; }
+.dashboard-number { font: 400 clamp(25px, 2vw, 32px)/1.3 var(--font-aclonica), Georgia, serif; color: #cb5e45; }
+.dashboard-card h2 { margin: 8px 0 12px; font: 700 clamp(18px, 1.7vw, 24px)/1.22 var(--font-kadwa), Georgia, serif; }
+.dashboard-card p { margin: 0; font: 400 clamp(16px, 1.55vw, 22px)/1.65 var(--font-kadwa), Georgia, serif; }
+.dashboard-card-action { margin-top: auto; padding: 8px 0 0; border: 0; background: transparent; color: var(--plum); font: 700 14px/1.5 var(--font-kadwa), Georgia, serif; text-decoration: underline; text-underline-offset: 4px; }
+.dashboard-card-action:hover { color: #a43e35; }
+.dashboard-tagline { text-align: center; margin: 24px 0 0; font: 400 clamp(13px, 1.2vw, 18px)/1.4 var(--font-kadwa), Georgia, serif; }
+.dashboard-modal-backdrop { position: fixed; z-index: 30; inset: 0; display: grid; place-items: center; padding: 18px; background: #32182799; }
+.dashboard-modal { width: min(100%, 540px); position: relative; padding: 34px; background: #e8ad71; border: 3px solid var(--teal); border-radius: 30px; box-shadow: 0 12px 45px #32182740; }
+.dashboard-modal h2 { margin: 0 36px 18px 0; font: 400 clamp(23px, 3vw, 32px)/1.2 var(--font-aclonica), Georgia, serif; }
+.dashboard-modal p { font: 400 17px/1.6 var(--font-kadwa), Georgia, serif; }
+.dashboard-modal-note { font-weight: 700 !important; }
+.dashboard-modal-close { position: absolute; right: 20px; top: 10px; font-size: 32px; border: 0; background: transparent; color: var(--plum); }
+.dashboard-modal-done { background: var(--plum); color: white; border: 0; border-radius: 40px; padding: 9px 30px; font: 700 16px var(--font-kadwa), Georgia, serif; }
+@media (max-width: 760px) {
+  .dashboard-page .site-header { padding-top: 70px; }
+  .dashboard-page .site-nav { gap: 18px; }
+  .dashboard-page .site-nav a { font-size: 12px; }
+  .dashboard-main { padding: 25px 20px 35px; }
+  .dashboard-main h1 { font-size: clamp(32px, 8vw, 44px); }
+  .dashboard-subtitle { font-size: 14px; margin-bottom: 24px; }
+  .dashboard-grid { grid-template-columns: 1fr; gap: 20px; }
+  .dashboard-card { min-height: 225px; border-radius: 32px; border-width: 4px; padding: 20px 23px; }
+  .dashboard-card h2 { font-size: 20px; }
+  .dashboard-card p { font-size: 16px; }
+  .dashboard-tagline { margin-top: 25px; }
+}
