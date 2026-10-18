@@ -3,14 +3,16 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
   const [message, setMessage] = useState("");
   const [remember, setRemember] = useState(false);
 
-  function unavailable(event: React.FormEvent<HTMLFormElement>) {
+  function enterDemo(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setMessage("Account sign-in is not available yet. Authentication has not been connected.");
+    router.push("/dashboard");
   }
 
   return (
@@ -33,11 +35,11 @@ export default function LoginPage() {
           <h1 id="login-title">FairTime</h1>
           <h2>Log in to your account</h2>
           <p className="login-instructions">Enter your email and password to continue.</p>
-          <form onSubmit={unavailable}>
+          <form onSubmit={enterDemo}>
             <label htmlFor="login-email">Email address</label>
-            <input id="login-email" name="email" type="email" autoComplete="email" required />
+            <input id="login-email" name="email" type="email" autoComplete="email" />
             <label htmlFor="login-password">Password</label>
-            <input id="login-password" name="password" type="password" autoComplete="current-password" required />
+            <input id="login-password" name="password" type="password" autoComplete="current-password" />
             <div className="login-options">
               <label className="login-remember"><input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} /> Remember me</label>
               <button type="button" className="login-text-action" onClick={() => setMessage("Password recovery is not available until authentication is connected.")}>Forgot password?</button>
@@ -45,7 +47,7 @@ export default function LoginPage() {
             <button type="submit" className="login-submit">Log in</button>
             {message && <p className="login-status" role="status">{message}</p>}
           </form>
-          <button type="button" className="login-create" onClick={() => setMessage("Account registration is not available yet. Authentication must be connected first.")}>Create an account</button>
+          <button type="button" className="login-create" onClick={() => router.push("/dashboard")}>Create an account</button>
         </section>
         <div className="login-side-art login-side-right" aria-hidden="true" />
       </main>
