@@ -34,7 +34,7 @@ const sections: { title: string; items: FAQItem[] }[] = [
 ];
 
 export default function FAQPage() {
-  const [openQuestion, setOpenQuestion] = useState<string | null>(null);
+  const [openQuestion, setOpenQuestion] = useState<string | null>("What is FairTime?");
   const [loginOpen, setLoginOpen] = useState(false);
 
   return (
@@ -52,28 +52,32 @@ export default function FAQPage() {
       <main className="faq-main">
         <h1>Questions? Let&apos;s clear things up.</h1>
         <p className="faq-intro">Everything you need to know about getting started with FairTime.</p>
-        <div className="faq-sections">
-          {sections.map((section) => (
-            <section className="faq-section" key={section.title} aria-label={section.title}>
-              <h2>{section.title}</h2>
-              <div className="faq-items">
-                {section.items.map((item) => {
-                  const expanded = openQuestion === item.question;
-                  return (
-                    <article className={`faq-item ${expanded ? "is-open" : ""}`} key={item.question}>
-                      <h3>
-                        <button type="button" aria-expanded={expanded} onClick={() => setOpenQuestion(expanded ? null : item.question)}>
-                          <span>{item.question}</span>
-                          <span className="faq-symbol" aria-hidden="true">{expanded ? "−" : "+"}</span>
-                        </button>
-                      </h3>
-                      {expanded && <p>{item.answer}</p>}
-                    </article>
-                  );
-                })}
-              </div>
-            </section>
-          ))}
+        <div className="faq-showcase" aria-label="Frequently asked questions">
+          {[
+            sections[0].items[0],
+            sections[0].items[2],
+            sections[2].items[2],
+            sections[1].items[0],
+            sections[0].items[1],
+            sections[0].items[3],
+            sections[1].items[1],
+            sections[1].items[2],
+            sections[2].items[0],
+            sections[2].items[1],
+          ].map((item, index) => {
+            const expanded = openQuestion === item.question;
+            return (
+              <article className={`faq-item ${expanded ? "is-open" : ""} ${index === 0 ? "faq-featured" : ""}`} key={item.question}>
+                <h2>
+                  <button type="button" aria-expanded={expanded} onClick={() => setOpenQuestion(expanded ? null : item.question)}>
+                    <span>{item.question}</span>
+                    <span className="faq-symbol" aria-hidden="true">{expanded ? "−" : "+"}</span>
+                  </button>
+                </h2>
+                {expanded && <p>{item.answer}</p>}
+              </article>
+            );
+          })}
         </div>
         <p className="faq-tagline">Your calendar knows when you&apos;re free. FairTime knows what&apos;s fair.</p>
       </main>
